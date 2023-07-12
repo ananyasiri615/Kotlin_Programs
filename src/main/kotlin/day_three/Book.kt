@@ -23,7 +23,7 @@ fun main(args: Array<String>) {
     }*/
     var stack = Stack<String>()
 
-    stack.push("Meera")
+    stack.push("Meerra")
     stack.push("Ajay")
     stack.push("Bharat")
     stack.push("Kumar")
