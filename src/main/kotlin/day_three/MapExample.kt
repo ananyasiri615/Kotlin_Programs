@@ -18,4 +18,16 @@ fun main(args: Array<String>) {
     scientistMap.replace("Newton", "Relative Physics")
 
     println(scientistMap)
+    println(scientistMap.containsKey("Newton"))
+
+    var politicalMap = LinkedHashMap<String, String>()
+    politicalMap["Narendra Modi"] = "BJP"
+    politicalMap["Arvind Kejriwal"] = "AAP"
+    politicalMap["Rahul Gandhi"] = "Congress"
+    politicalMap["Mamta Banerjee"] = "TMC"
+
+    var keys = politicalMap.keys
+    for(key in keys) {
+        println("Politicians are : " + key)
+    }
 }
