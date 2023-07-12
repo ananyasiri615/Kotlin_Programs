@@ -1,7 +1,6 @@
 fun main(args: Array<String>) {
 
-    val scientistMap = hashMapOf("Darwin" to "Biology", "Einstein" to "Physics",
-        "Kalam" to "Physics")
+    val scientistMap = hashMapOf("Darwin" to "Biology", "Einstein" to "Physics", "Kalam" to "Physics")
 
     println(scientistMap)
 
