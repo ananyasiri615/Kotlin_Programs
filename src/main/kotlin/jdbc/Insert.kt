@@ -18,26 +18,11 @@ object Insert {
             var rs: ResultSet? = null
 
             stmt = con!!.createStatement()
-            // Read Operation
-//            var query: String = "select * from doctor"
 
-            // INSERT OPERATION
-//            ***************
             var query: String = "insert into manager values(1006, 'Anita', 23, 102)"
             val rows = stmt!!.executeUpdate(query)
             println("Insertion Successful $rows")
-            // ****************
 
-            // THIS IS ONLY REQUIRED FOR READ OPERATION
-//            if (stmt.execute(query)) {
-//                rs = stmt.resultSet
-//            }
-//            while (rs!!.next()) {
-//                println(rs.getString("id"))
-//                println(rs.getString("name"))
-//                println(rs.getString("department"))
-//                println(rs.getString("age"))
-//            }
         }catch (ex: Exception){
             ex.printStackTrace()
         }

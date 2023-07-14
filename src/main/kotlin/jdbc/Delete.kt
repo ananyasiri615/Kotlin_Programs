@@ -18,26 +18,11 @@ object Delete {
             var rs: ResultSet? = null
 
             stmt = con!!.createStatement()
-            // Read Operation
-//            var query: String = "select * from doctor"
 
-            // INSERT OPERATION
-//            ***************
             var query: String = "delete from manager where manager_id = 1002"
             val rows = stmt!!.executeUpdate(query)
             println("Delete Successful $rows")
-            // ****************
 
-            // THIS IS ONLY REQUIRED FOR READ OPERATION
-//            if (stmt.execute(query)) {
-//                rs = stmt.resultSet
-//            }
-//            while (rs!!.next()) {
-//                println(rs.getString("id"))
-//                println(rs.getString("name"))
-//                println(rs.getString("department"))
-//                println(rs.getString("age"))
-//            }
         }catch (ex: Exception){
             ex.printStackTrace()
         }

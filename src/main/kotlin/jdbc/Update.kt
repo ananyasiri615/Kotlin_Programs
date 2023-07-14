@@ -26,18 +26,6 @@ object Update {
             var query: String = "update manager set name = 'Latashree' where manager_id=1003"
             val rows = stmt!!.executeUpdate(query)
             println("Update Successful $rows")
-            // ****************
-
-            // THIS IS ONLY REQUIRED FOR READ OPERATION
-//            if (stmt.execute(query)) {
-//                rs = stmt.resultSet
-//            }
-//            while (rs!!.next()) {
-//                println(rs.getString("id"))
-//                println(rs.getString("name"))
-//                println(rs.getString("department"))
-//                println(rs.getString("age"))
-//            }
         }catch (ex: Exception){
             ex.printStackTrace()
         }
