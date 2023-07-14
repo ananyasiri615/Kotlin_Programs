@@ -8,7 +8,6 @@ interface A {
 }
 
 interface B {
-
     fun display(){
         println("Display function of B interface")
     }
