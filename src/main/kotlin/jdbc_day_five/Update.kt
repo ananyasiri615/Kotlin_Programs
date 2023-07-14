@@ -1,4 +1,4 @@
-package jdbc
+package jdbc_day_five
 
 import java.sql.*
 

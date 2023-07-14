@@ -1,8 +1,9 @@
-package jdbc
+package jdbc_day_five
 
+import java.sql.DriverManager
 import java.sql.*
 
-object Delete {
+object Create {
     var con : Connection ? = null
     var username = "root"
     var password = "ananya10"
@@ -19,10 +20,13 @@ object Delete {
 
             stmt = con!!.createStatement()
 
-            var query: String = "delete from manager where manager_id = 1002"
-            val rows = stmt!!.executeUpdate(query)
-            println("Delete Successful $rows")
+            // Create table
+            var query: String = "create table menu(id int, item varchar(100), quality varchar(100))"
+            var queryy: String = "insert into menu(id,item,quality) values (1,'Maggie', 'Good') "
 
+            val rows = stmt!!.executeUpdate(query)
+            val rows1 = stmt!!.executeUpdate(queryy)
+            println("Table created Successfully & values inserted ")
         }catch (ex: Exception){
             ex.printStackTrace()
         }
@@ -41,4 +45,3 @@ object Delete {
     }
 
 }
-

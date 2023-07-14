@@ -1,44 +1,54 @@
-package jdbc
+package jdbc_day_five
 
+import java.sql.DriverManager
 import java.sql.*
 
-object Insert {
+object MySQLConnectivityExample {
+
     var con : Connection ? = null
     var username = "root"
     var password = "ananya10"
 
     @JvmStatic
-    fun main(args: Array<String>) {
+    fun main(args: Array<String>){
         getConnection()
         executeQuery()
     }
+
     fun executeQuery(){
+
         try {
             var stmt: Statement? = null
             var rs: ResultSet? = null
 
             stmt = con!!.createStatement()
+            var query: String = "show databases"
 
-            var query: String = "insert into manager values(1006, 'Anita', 23, 102)"
-            val rows = stmt!!.executeUpdate(query)
-            println("Insertion Successful $rows")
+            if (stmt.execute(query)) {
+                rs = stmt.resultSet
+            }
 
-        }catch (ex: Exception){
+            while (rs!!.next()) {
+                println(rs.getString("Database"))
+            }
+        } catch (ex: Exception){
             ex.printStackTrace()
         }
+
     }
-    fun getConnection(){
+
+    fun getConnection() {
         try {
-            // Load the driver class
+            //Load the driver class
             Class.forName("com.mysql.cj.jdbc.Driver")
-            // Obtaining the connection object
+            //Obtaining the connectin object
             con = DriverManager.getConnection("jdbc:mysql://localhost:3306/my_test_db", username, password)
-        }catch (ex: Exception){
-            println("Exception occured. Handled")
+        } catch (ex: Exception){
+            println("Exception occurred. Handled")
             ex.printStackTrace()
         }
-
     }
+
+
 
 }
-
