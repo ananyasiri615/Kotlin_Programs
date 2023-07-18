@@ -1,9 +1,8 @@
-package jdbc_day_five
+package HOME_ASSIGNMENTS
 
-import java.sql.DriverManager
 import java.sql.*
 
-object Create {
+object Delete {
     var con : Connection ? = null
     var username = "root"
     var password = "ananya10"
@@ -20,13 +19,10 @@ object Create {
 
             stmt = con!!.createStatement()
 
-            // Create table
-            var query: String = "create table menu(id int, item varchar(100), quality varchar(100))"
-            //var queryy: String = "insert into menu(id,item,quality) values (1,'Maggie', 'Good') "
-
+            var query: String = "delete from Player where id = 1002"
             val rows = stmt!!.executeUpdate(query)
-            //val rows1 = stmt!!.executeUpdate(queryy)
-            println("Table created Successfully & values inserted ")
+            println("Delete Successful $rows")
+
         }catch (ex: Exception){
             ex.printStackTrace()
         }
@@ -37,8 +33,7 @@ object Create {
             Class.forName("com.mysql.cj.jdbc.Driver")
             // Obtaining the connection object
             con = DriverManager.getConnection("jdbc:mysql://localhost:3306/my_test_db", username, password)
-        }
-        catch (ex: Exception){
+        }catch (ex: Exception){
             println("Exception occured. Handled")
             ex.printStackTrace()
         }
@@ -46,3 +41,4 @@ object Create {
     }
 
 }
+

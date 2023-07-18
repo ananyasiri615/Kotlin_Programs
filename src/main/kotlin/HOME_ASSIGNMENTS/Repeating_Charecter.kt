@@ -5,20 +5,20 @@ import java.util.Scanner
 fun main(args: Array<String>) {
     var scanner = Scanner(System.`in`)
     var word = scanner.nextLine()
-    var LHM = LinkedHashMap<Char,Int>()
+    var lHM = LinkedHashMap<Char,Int>()
     for(j in word){
-        if(LHM.containsKey(j)){
-            LHM.put(j,LHM.getValue(j)+1)
+        if(lHM.containsKey(j)){
+            lHM.put(j,lHM.getValue(j)+1)
         }
         else{
-            LHM.put(j,1)
+            lHM.put(j,1)
         }
     }
     var reoccur : Char = ' '
     var count=Integer.MIN_VALUE
-    for((key, value) in LHM){
-        if(count<LHM.getValue(key)){
-            count=LHM.getValue(key)
+    for((key, value) in lHM){
+        if(count<lHM.getValue(key)){
+            count=lHM.getValue(key)
             reoccur=key
         }
     }

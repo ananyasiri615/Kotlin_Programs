@@ -1,4 +1,4 @@
-package jdbc_day_five
+package HOME_ASSIGNMENTS
 
 import java.sql.DriverManager
 import java.sql.*
@@ -21,11 +21,9 @@ object Create {
             stmt = con!!.createStatement()
 
             // Create table
-            var query: String = "create table menu(id int, item varchar(100), quality varchar(100))"
-            //var queryy: String = "insert into menu(id,item,quality) values (1,'Maggie', 'Good') "
+            var query: String = "create table Player(id int, name varchar(100), sport varchar(100), age int, country varchar(100))"
 
             val rows = stmt!!.executeUpdate(query)
-            //val rows1 = stmt!!.executeUpdate(queryy)
             println("Table created Successfully & values inserted ")
         }catch (ex: Exception){
             ex.printStackTrace()
